@@ -1,4 +1,4 @@
-import { Boxes, GraduationCap, Users, LayoutGrid, Book, BookOpen } from 'lucide-react'
+import { Boxes, GraduationCap, Users, LayoutGrid, Book, BookOpen, Heart } from 'lucide-react'
 
 export const siteConfig = {
   name: "Ishara",
@@ -39,5 +39,10 @@ export const siteConfig = {
       href: "/courses",
       icon: BookOpen,
     },
+    {
+      title: "Volunteer",
+      href: "/volunteering",
+      icon: Heart
+    }
   ],
 } 
