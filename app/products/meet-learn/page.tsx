@@ -1,18 +1,52 @@
-export default function MeetLearnPage() {
+"use client"
+
+import "@tensorflow/tfjs";
+import { useEffect, useRef, useState } from "react";
+import * as handpose from "@tensorflow-models/handpose";
+import Webcam from "react-webcam";
+
+export default function ASLRecognition() {
+  const webcamRef = useRef<Webcam>(null);
+  const canvasRef = useRef(null);
+  const [prediction, setPrediction] = useState("Waiting...");
+
+  useEffect(() => {
+    const runHandpose = async () => {
+      const net = await handpose.load();
+      setInterval(() => {
+        detect(net);
+      }, 1000);
+    };
+
+    const detect = async (net: handpose.HandPose) => {
+      if (
+        webcamRef.current &&
+        webcamRef.current.video?.readyState === 4
+      ) {
+        const video = webcamRef.current.video;
+        if (video) {
+          const hand = await net.estimateHands(video);
+          if (hand.length > 0) {
+        }
+          const sign = classifySign();
+          setPrediction(sign);
+        }
+      }
+    };
+
+    runHandpose();
+  }, []);
+
+  const classifySign = () => {
+    // Mock classification: Replace with actual ASL model
+    return "Hello"; // Example static output
+  };
+
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6 text-primary">Meet & Learn</h1>
-      <div className="prose max-w-none">
-        <p className="text-lg mb-4 text-muted-foreground">
-          Connect with others and practice ASL in real-time:
-        </p>
-        <ul className="list-disc pl-6 mb-6 text-foreground">
-          <li>Join virtual practice sessions</li>
-          <li>Connect with ASL learners</li>
-          <li>Practice with native signers</li>
-          <li>Participate in group sessions</li>
-        </ul>
-      </div>
+    <div className="flex flex-col items-center">
+      <Webcam ref={webcamRef} style={{ width: 640, height: 480 }} />
+      <canvas ref={canvasRef} style={{ position: "absolute" }} />
+      <div className="text-xl font-bold mt-4">{prediction}</div>
     </div>
   );
-} 
+}
