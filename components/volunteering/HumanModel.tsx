@@ -129,6 +129,7 @@ const HumanModel = () => {
   const handleSaveCurrentPose = async () => {
     if (!poseName) {
       setSaveStatus('Please enter a pose name');
+      setTimeout(() => setSaveStatus(''), 1000); // Clear message after 1 second
       return;
     }
 
@@ -143,8 +144,12 @@ const HumanModel = () => {
     try {
       const result = await savePose(poseName, boneStates);
       setSaveStatus(result.success ? 'Pose saved successfully!' : 'Failed to save pose');
+      // Clear status message after 1 second
+      setTimeout(() => setSaveStatus(''), 1000);
     } catch (error) {
       setSaveStatus('Error saving pose');
+      // Clear error message after 1 second
+      setTimeout(() => setSaveStatus(''), 1000);
     }
   };
 
@@ -488,9 +493,23 @@ const HumanModel = () => {
                       <label className="text-sm font-medium text-gray-700">
                         {axis.toUpperCase()} Axis Rotation
                       </label>
-                      <span className="text-sm font-mono bg-white px-2 py-1 rounded-md border">
-                        {rotation[axis as keyof typeof rotation].toFixed(1)}°
-                      </span>
+                      <div className="flex items-center gap-2">
+                        <input
+                          type="number"
+                          value={rotation[axis as keyof typeof rotation]}
+                          onChange={(e) => {
+                            const value = parseFloat(e.target.value);
+                            if (!isNaN(value)) {
+                              handleBoneRotation(
+                                axis as 'x' | 'y' | 'z',
+                                Math.min(Math.max(value, min), max).toString()
+                              );
+                            }
+                          }}
+                          className="w-20 text-sm font-mono bg-white px-2 py-1 rounded-md border focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        />
+                        <span className="text-sm font-mono">°</span>
+                      </div>
                     </div>
                     
                     <input
@@ -539,14 +558,14 @@ const HumanModel = () => {
             </div>
           )}
           
-          {selectedBone && (
+          {/* {selectedBone && (
             <button
               onClick={handleSaveCurrentBone}
               className="w-full mb-4 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg"
             >
               Save Current Bone Position
             </button>
-          )}
+          )} */}
 
           <div className="space-y-2">
             <input
