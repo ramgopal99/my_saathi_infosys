@@ -582,7 +582,7 @@ const HumanModel = () => {
                 
                 if (!isPlaying) {
                   // Define your specific sequence
-                  const desiredSequence = ['a'];
+                  const desiredSequence = ['le',"t's"];
                   
                   // Filter poses to match your sequence order
                   const matchingPoses = desiredSequence.filter(name => 
