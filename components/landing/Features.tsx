@@ -39,13 +39,13 @@ const features = [
 
 export default function Features() {
   return (
-    <section className="py-16 bg-primary-50">
+    <section className="py-16 bg-indigo-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-8">OUR FEATURES</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
             <div key={index} className="bg-white p-4 rounded-lg shadow-sm">
-              <div className="text-primary-600 mb-3">
+              <div className="text-indigo-600 mb-3">
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   {feature.icon}
                 </svg>

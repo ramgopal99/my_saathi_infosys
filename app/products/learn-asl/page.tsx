@@ -49,17 +49,17 @@ export default function LearnASLPage() {
   };
 
   return (
-    <div className="h-screen bg-gradient-to-br from-indigo-500 via-indigo-600 to-indigo-700">
+    <div className="h-screen bg-white">
       <MaxWidthWrapper className="py-8">
         <div className="flex flex-col-reverse lg:flex-row lg:gap-10">
           {/* Left Section - Enhanced Input and Controls */}
           <div className="lg:w-1/2 space-y-6 mt-6 lg:mt-0">
             <div className="space-y-4">
               <div>
-                <h2 className="text-4xl font-bold text-white mb-2">
-                  Learn Sign Language <span className="text-yellow-400">Instantly</span>
+                <h2 className="text-4xl font-bold text-gray-900 mb-2">
+                  Learn Sign Language <span className="text-blue-600">Instantly</span>
                 </h2>
-                <p className="text-gray-100 text-lg leading-relaxed">
+                <p className="text-gray-600 text-lg leading-relaxed">
                   Transform your words into sign language with our real-time translator.
                 </p>
               </div>
@@ -84,7 +84,7 @@ export default function LearnASLPage() {
 
                 <Button 
                   onClick={convertToSigns}
-                  className="w-full rounded-xl bg-gradient-to-r from-yellow-400 to-yellow-500 py-4 text-base font-semibold text-indigo-900 transition-all hover:opacity-90 hover:shadow-xl hover:scale-[1.02] duration-200"
+                  className="w-full rounded-xl bg-gradient-to-r from-blue-500 to-blue-600 py-4 text-base font-semibold text-white transition-all hover:opacity-90 hover:shadow-xl hover:scale-[1.02] duration-200"
                   variant="default"
                 >
                   Translate Now →
@@ -98,10 +98,10 @@ export default function LearnASLPage() {
                     { icon: "💡", title: "Smart Detection", desc: "Words & characters" },
                     { icon: "🎯", title: "Perfect Practice", desc: "Visual learning" },
                   ].map((feature, index) => (
-                    <div key={index} className="rounded-lg bg-white/10 p-3 backdrop-blur-sm">
+                    <div key={index} className="rounded-lg bg-gray-50 p-3 shadow-sm border border-gray-100">
                       <div className="text-xl mb-1">{feature.icon}</div>
-                      <h3 className="text-white font-semibold text-sm">{feature.title}</h3>
-                      <p className="text-gray-200 text-xs">{feature.desc}</p>
+                      <h3 className="text-gray-900 font-semibold text-sm">{feature.title}</h3>
+                      <p className="text-gray-600 text-xs">{feature.desc}</p>
                     </div>
                   ))}
                 </div>
@@ -111,12 +111,12 @@ export default function LearnASLPage() {
 
           {/* Right Section - Enhanced Display Area */}
           <div className="lg:w-1/2">
-            <div className="rounded-2xl border border-white/20 bg-white/10 p-6 shadow-2xl backdrop-blur-md">
-              <h1 className="text-white text-2xl font-bold mb-4">
+            <div className="rounded-2xl border border-gray-200 bg-gray-50 p-6 shadow-lg">
+              <h1 className="text-gray-900 text-2xl font-bold mb-4">
                 Watch Your Signs Come to Life
               </h1>
               
-              <div className="h-[300px] rounded-xl border border-white/20 bg-white/5 p-6 relative shadow-inner backdrop-blur-sm">
+              <div className="h-[300px] rounded-xl border border-gray-200 bg-white p-6 relative shadow-inner">
                 {signs.length > 0 ? (
                   <div className="flex items-center justify-center h-full">
                     <div className="relative w-full h-full max-w-[200px] max-h-[200px] mx-auto">
@@ -130,10 +130,10 @@ export default function LearnASLPage() {
                   </div>
                 ) : (
                   <div className="flex flex-col items-center justify-center h-full space-y-3">
-                    <div className="w-16 h-16 rounded-full bg-yellow-400/20 flex items-center justify-center">
+                    <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center">
                       <span className="text-3xl">👋</span>
                     </div>
-                    <p className="text-white text-center text-lg">
+                    <p className="text-gray-600 text-center text-lg">
                       Start typing to see the magic happen!
                     </p>
                   </div>
@@ -143,12 +143,12 @@ export default function LearnASLPage() {
               {/* History Section */}
               {signs.length > 0 && (
                 <div className="mt-4">
-                  <h3 className="text-white text-base mb-2">Translation History</h3>
+                  <h3 className="text-gray-900 text-base mb-2">Translation History</h3>
                   <div className="flex gap-2 overflow-x-auto py-2">
                     {signs.map((sign, index) => (
                       <div 
                         key={index}
-                        className="relative w-16 h-16 flex-shrink-0 rounded-xl border border-white/20 bg-white/10 p-2 shadow-lg transition-all duration-200 hover:scale-110 hover:shadow-xl backdrop-blur-sm"
+                        className="relative w-16 h-16 flex-shrink-0 rounded-xl border border-gray-200 bg-white p-2 shadow-sm transition-all duration-200 hover:scale-110 hover:shadow-lg"
                       >
                         <Image
                           src={sign}

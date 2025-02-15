@@ -36,7 +36,7 @@ export default function Testimonials() {
               className="bg-white dark:bg-gray-700 p-4 sm:p-6 lg:p-8 rounded-xl shadow-lg 
                 hover:shadow-2xl hover:-translate-y-2 transform 
                 transition-all duration-300 ease-in-out border-2 border-transparent
-                hover:border-primary-500 cursor-pointer"
+                hover:border-indigo-500 cursor-pointer"
             >
               <div className="flex items-center space-x-4 mb-4">
                 <div className="h-12 w-12 sm:h-14 sm:w-14 rounded-full overflow-hidden flex-shrink-0">
