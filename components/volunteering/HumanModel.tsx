@@ -601,7 +601,7 @@ const HumanModel = () => {
                 
                 if (!isPlaying) {
                   // Define your specific sequence
-                  const desiredSequence = ['le',"t's"];
+                  const desiredSequence = ['le', "t's", "lo", "ok", "A", "R", "ju", "st", "60", "sec", "onds", "music", "A", "R", "mean", "overlay", "ing", "digi", "tal", "images", "re", "al", "world", "en", "han", "ce", "digi", "tal", "deta", "ils"];
                   
                   // Filter poses to match your sequence order
                   const matchingPoses = desiredSequence.filter(name => 

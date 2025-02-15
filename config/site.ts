@@ -1,4 +1,4 @@
-import { Boxes, GraduationCap, Users, LayoutGrid, Book, BookOpen, Heart } from 'lucide-react'
+import { Boxes, GraduationCap, LayoutGrid, Book, BookOpen, Heart, Video } from 'lucide-react'
 
 export const siteConfig = {
   name: "Ishara",
@@ -21,12 +21,6 @@ export const siteConfig = {
           description: "Interactive ASL lessons with 3D demonstrations",
           icon: GraduationCap
         },
-        {
-          title: "Meet & Learn",
-          href: "/products/meet-learn",
-          description: "Connect with others and practice ASL in real-time",
-          icon: Users
-        },
       ],
     },
     {
@@ -40,9 +34,19 @@ export const siteConfig = {
       icon: BookOpen,
     },
     {
+      title: "Community",
+      href: "/community",
+      icon: BookOpen,
+    },
+    {
       title: "Volunteer",
       href: "/volunteering",
       icon: Heart
+    },
+    {
+      title: "Video Sample",
+      href: "/video-sample",
+      icon: Video
     }
   ],
 } 
