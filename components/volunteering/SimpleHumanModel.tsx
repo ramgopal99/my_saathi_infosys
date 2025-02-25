@@ -87,8 +87,8 @@ const SimpleHumanModel = () => {
             videoRef.current.currentTime = 0;
             try {
                 await videoRef.current.play();
-            } catch (error) {
-                if (error.name !== 'AbortError') {
+            } catch (error: unknown) {
+                if (error instanceof Error && error.name !== 'AbortError') {
                     console.error('Video playback error:', error);
                 }
             }
