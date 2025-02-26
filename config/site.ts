@@ -1,7 +1,7 @@
 import { Boxes, GraduationCap, LayoutGrid, Book, BookOpen, Heart, Video } from 'lucide-react'
 
 export const siteConfig = {
-  name: "Ishara",
+  name: "My Saathi",
   description: "Learn ASL and explore 3D models",
   mainNav: [
     {
