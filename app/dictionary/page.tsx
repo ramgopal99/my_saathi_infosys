@@ -69,15 +69,15 @@ const DictionaryPage = () => {
   );
 
   return (
-    <div className="p-4 sm:p-6 lg:p-8">
-      <h1 className="text-3xl font-bold mb-8 text-indigo-600 text-center">Sign Language Dictionary</h1>
+    <div className="p-4 sm:p-6 lg:p-8 bg-white">
+      <h1 className="text-3xl font-bold mb-8 text-blue-600 text-center">Sign Language Dictionary</h1>
       
       {/* Search Bar */}
       <div className="mb-10 flex justify-center">
         <input
           type="text"
           placeholder="Search signs..."
-          className="w-full max-w-md px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 transition-all bg-white"
+          className="w-full max-w-md px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition-all bg-white shadow-sm"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
@@ -89,11 +89,11 @@ const DictionaryPage = () => {
           <div
             key={index}
             className="p-6 border rounded-lg shadow-md hover:shadow-lg transition-all 
-                     bg-gradient-to-br from-white to-indigo-50 hover:from-indigo-50 hover:to-white
-                     border-indigo-200"
+                     bg-gradient-to-br from-white to-blue-50 hover:from-blue-50 hover:to-white
+                     border-gray-200"
           >
-            <h2 className="text-xl font-semibold mb-2 text-indigo-600">{entry.word}</h2>
-            <p className="text-gray-700 mb-4">{entry.description}</p>
+            <h2 className="text-xl font-semibold mb-2 text-blue-600">{entry.word}</h2>
+            <p className="text-gray-600 mb-4">{entry.description}</p>
             {entry.imageUrl && (
               <div className="relative h-48 w-full">
                 <Image
@@ -109,7 +109,7 @@ const DictionaryPage = () => {
       </div>
 
       {filteredSigns.length === 0 && (
-        <p className="text-center text-indigo-600 mt-8">
+        <p className="text-center text-blue-600 mt-8">
           No signs found for `{searchTerm}`
         </p>
       )}
