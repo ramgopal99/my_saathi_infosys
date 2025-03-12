@@ -97,13 +97,13 @@ const courses: Course[] = [
 
 export default function CoursesPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       <div className="container mx-auto px-4 py-12">
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-3xl font-bold text-gray-800">Available Courses</h1>
           <Link 
             href="/dashboard/mycourses"
-            className="bg-indigo-600 text-white px-6 py-2.5 rounded-lg hover:bg-indigo-700 transition-colors duration-300 flex items-center gap-2"
+            className="bg-blue-600 text-white px-6 py-2.5 rounded-lg hover:bg-blue-700 transition-colors duration-300 flex items-center gap-2"
           >
             <span>My Courses</span>
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -117,7 +117,7 @@ export default function CoursesPage() {
             <Link 
               key={course.id}
               href={`/courses/${course.id}`}
-              className="group bg-card rounded-xl border border-indigo-100 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col h-full"
+              className="group bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col h-full"
             >
               <div className="relative h-52">
                 <Image
@@ -127,19 +127,19 @@ export default function CoursesPage() {
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute top-4 left-4">
-                  <span className="px-4 py-1.5 bg-indigo-600/90 text-white text-sm rounded-full font-medium">
+                  <span className="px-4 py-1.5 bg-blue-600/90 text-white text-sm rounded-full font-medium">
                     {course.category}
                   </span>
                 </div>
               </div>
               <div className="p-6 flex flex-col flex-grow">
-                <h2 className="text-xl font-bold mb-3 text-indigo-600 group-hover:text-indigo-700 transition-colors duration-300 line-clamp-2">
+                <h2 className="text-xl font-bold mb-3 text-blue-600 group-hover:text-blue-700 transition-colors duration-300 line-clamp-2">
                   {course.title}
                 </h2>
-                <p className="text-muted-foreground mb-4 text-sm line-clamp-2 flex-grow">
+                <p className="text-gray-600 mb-4 text-sm line-clamp-2 flex-grow">
                   {course.description}
                 </p>
-                <div className="flex items-center gap-4 mb-6 text-sm text-muted-foreground">
+                <div className="flex items-center gap-4 mb-6 text-sm text-gray-500">
                   <div className="flex items-center gap-1.5">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -154,7 +154,7 @@ export default function CoursesPage() {
                   </div>
                 </div>
                 <div className="mt-auto">
-                  <div className="w-full bg-indigo-600/10 text-indigo-600 hover:bg-indigo-600 hover:text-white px-6 py-2.5 rounded-lg font-medium 
+                  <div className="w-full bg-blue-50 text-blue-600 hover:bg-blue-600 hover:text-white px-6 py-2.5 rounded-lg font-medium 
                     transition-all duration-300 flex items-center justify-center gap-2">
                     <span>Learn More</span>
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
